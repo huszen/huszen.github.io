@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.bak
+
+# Node (only if you ever add npm later)
+node_modules/
+
+# Dist or build output (if you ever use a bundler)
+dist/
+build/
