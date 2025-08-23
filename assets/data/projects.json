@@ -82,5 +82,16 @@
     "process": "I designed the API using Flask Blueprints for modular routes and SQLAlchemy for database modeling. The backend includes authentication, product management, cart, and checkout flows. A seed script was created to populate the database with sample data. Development followed a step-by-step process: authentication first, then product endpoints, cart functionality, and finally checkout simulation.",
     "challenges": "One challenge was structuring the API to remain simple yet extensible. Another challenge was simulating Stripe payment flows without real webhook integration while keeping the checkout logic realistic. Managing authentication securely with JWT and ensuring cart-product relations worked smoothly was also a key challenge.",
     "learnings": "Through this project, I learned how to build a RESTful API from scratch with Flask, structure routes using Blueprints, implement JWT authentication, and manage relational data with SQLAlchemy. I also gained experience in simulating payment flows and thinking about how role-based access control could be implemented in future improvements."
+  },
+  "saas-customer-churn-analysist": {
+    "title": "SaaS Customer Churn Analysist",
+    "image": "assets/images/portfolio/aws-saas-churn.png",
+    "description": "This project analyzes customer churn patterns in a fictitious SaaS sales dataset (AWS dataset). Using RFM analysis and machine learning, the project identifies factors contributing to churn and builds a predictive model.",
+    "link": "https://github.com/huszen/aws-ficticious-saas-churn.git",
+    "techs": ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter Notebook"],
+    "features": ["Exploratory Data Analysis (EDA)", "RFM (Recency, Frequency, Monetary) analysis", "Churn labeling", "Correlation analysis of discounts vs. profits", "Churn visualization", "Machine learning model for churn prediction"],
+    "process": "The project started with exploratory data analysis to understand sales trends and segment-level discount-profit correlations. Next, RFM features (Recency, Frequency, Monetary) were engineered to represent customer behavior. Churn was defined by labeling the top 25% most inactive customers as churned. Hypothesis testing was conducted to validate differences in RFM values between churned and active customers. Finally, a machine learning model was trained and evaluated to predict churn.",
+    "challenges": "One challenge was defining churn in a meaningful way for a fictitious dataset. Since the data did not explicitly contain churn labels, a logical threshold based on recency had to be created. Another challenge was dealing with the small number of unique customers after grouping, which limited the dataset size and risked overfitting in the machine learning model.",
+    "learnings": "From this project, I learned how to design churn labels using RFM analysis rather than arbitrary assumptions, and the importance of validating RFM features statistically before modeling. I also gained insights into how discounts can negatively affect profits in SaaS sales and built an end-to-end churn analysis pipeline covering EDA, RFM feature engineering, churn labeling, statistical validation, and machine learning."
   }
 }
