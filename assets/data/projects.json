@@ -93,5 +93,24 @@
     "process": "The project started with exploratory data analysis to understand sales trends and segment-level discount-profit correlations. Next, RFM features (Recency, Frequency, Monetary) were engineered to represent customer behavior. Churn was defined by labeling the top 25% most inactive customers as churned. Hypothesis testing was conducted to validate differences in RFM values between churned and active customers. Finally, a machine learning model was trained and evaluated to predict churn.",
     "challenges": "One challenge was defining churn in a meaningful way for a fictitious dataset. Since the data did not explicitly contain churn labels, a logical threshold based on recency had to be created. Another challenge was dealing with the small number of unique customers after grouping, which limited the dataset size and risked overfitting in the machine learning model.",
     "learnings": "From this project, I learned how to design churn labels using RFM analysis rather than arbitrary assumptions, and the importance of validating RFM features statistically before modeling. I also gained insights into how discounts can negatively affect profits in SaaS sales and built an end-to-end churn analysis pipeline covering EDA, RFM feature engineering, churn labeling, statistical validation, and machine learning."
+  },
+  "walmart-sales-forecast": {
+    "title": "Walmart Sales Forecast",
+    "image": "assets/images/portfolio/walmart-sales-forecast.png",
+    "description": "A time series forecasting project using Walmart sales data. The project explores calendar features, lag-based predictors, and deep learning (PyTorch LSTM) to forecast future sales and compare different modeling approaches.",
+    "link": "https://github.com/huszen/walmart-sales-forecast",
+    "techs": ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "PyTorch", "Jupyter Notebook"],
+    "features": [
+      "Exploratory Data Analysis (EDA) on Walmart sales dataset",
+      "Feature engineering with calendar and lag-based features",
+      "Store-level forecasting models",
+      "Global forecasting model across multiple stores",
+      "PyTorch LSTM sequence model for time series forecasting",
+      "Evaluation using MAE, RMSE, and R² metrics",
+      "Visualization of forecast vs. actual sales"
+    ],
+    "process": "The project began with exploratory data analysis to understand sales trends at the store level. Feature engineering was then applied by adding calendar variables (day, week, month) and lagged sales values. At first, the model was trained using only calendar features and focused on a particular store or department, without incorporating lagged values. The results, however, were not very promising. To improve performance, lagged features were introduced. Lag features are essentially past values of the target variable (e.g., sales from previous weeks), which provide temporal context and help the model capture sequential patterns. This model showed improvement compared to the initial one. Afterward, I expanded the training scope from store/department level to a global model, which aggregated data across stores. This approach further improved performance and gave insights into how sales forecasting behaves on a broader scale. Following this, I implemented a PyTorch model, starting with a simple linear regression built in PyTorch, which delivered better performance compared to the earlier scikit-learn models. Encouraged by this, I experimented with a more complex architecture by adding an LSTM layer to capture temporal dependencies. However, the LSTM model performed poorly. This was likely due to the nature of LSTM models, which require carefully structured sequential inputs and longer training to leverage their strengths. Since I only made minimal adjustments to the dataset for the LSTM input, the data was not fully optimized for sequence modeling, which led to underperformance.",
+    "challenges": "The biggest challenge in this project was preparing the data to behave like true time series data. Since I wasn’t very familiar with time series at the start, I had to figure out how to transform the dataset so it could be used for forecasting. A key part of this was implementing a sliding window approach, which allowed me to create sequential samples that the model could learn from. Getting this step right was essential for building and training the forecasting models.",
+    "learnings": "This project enhanced my understanding of time series forecasting, feature engineering, and deep learning with PyTorch. I learned the importance of starting with simple baseline models such as linear regression and global regressors before moving to more complex architectures. I also gained practical experience in reshaping data into a time series format using sliding windows, which allowed me to build forecasting models capable of predicting future sales."
   }
 }
